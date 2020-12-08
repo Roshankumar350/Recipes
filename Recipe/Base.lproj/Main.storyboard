@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oA0-ee-PDA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RecipeViewController" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ijR-Qd-tQI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="6sT-qm-Bki"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zi4-W5-PJE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ijR-Qd-tQI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0KI-7b-kKl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ijR-Qd-tQI" secondAttribute="trailing" id="AUq-Xu-x3V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ijR-Qd-tQI" secondAttribute="bottom" id="AwZ-z2-1Bd"/>
+                            <constraint firstItem="ijR-Qd-tQI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="txu-Rh-N0t"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="J1l-p4-uzR">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="RL3-YC-55F">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WIv-7I-o19">
+                                    <rect key="frame" x="323.5" y="8" width="70.5" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <imageReference key="image" image="cart.fill" catalog="system" symbolScale="large"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleShadowColor" systemColor="systemGray2Color"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="RwQ-Al-Laq" kind="show" identifier="carts" id="ThV-Yn-fKd"/>
+                                    </connections>
+                                </button>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem title="Sort" id="VpA-5j-4YX">
+                                <connections>
+                                    <action selector="sort:" destination="BYZ-38-t0r" id="UkB-6g-7RG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cart" destination="WIv-7I-o19" id="tm4-uO-o3U"/>
+                        <outlet property="cartTitle" destination="VpA-5j-4YX" id="T7b-9T-zyE"/>
+                        <outlet property="recipeTableView" destination="ijR-Qd-tQI" id="meu-YI-HgC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="38"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5yf-ZW-Aks">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oA0-ee-PDA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ouZ-Hz-gCX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="d0B-WS-oxE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBR-Bw-KpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="37.5"/>
+        </scene>
+        <!--Carts-->
+        <scene sceneID="iiR-p7-DUQ">
+            <objects>
+                <viewController id="RwQ-Al-Laq" customClass="CardViewController" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Nl-gw-KAL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TqG-fs-DrQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RwQ-Al-Laq" id="GeR-pT-JlI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e1m-1C-PIF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e1m-1C-PIF" firstAttribute="bottom" secondItem="TqG-fs-DrQ" secondAttribute="bottom" id="0CT-zq-OW9"/>
+                            <constraint firstItem="TqG-fs-DrQ" firstAttribute="leading" secondItem="e1m-1C-PIF" secondAttribute="leading" id="6W5-S6-Rbq"/>
+                            <constraint firstItem="e1m-1C-PIF" firstAttribute="trailing" secondItem="TqG-fs-DrQ" secondAttribute="trailing" id="E2h-Ov-K52"/>
+                            <constraint firstItem="TqG-fs-DrQ" firstAttribute="top" secondItem="e1m-1C-PIF" secondAttribute="top" id="WUm-OA-cvj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Carts" id="3Fm-Tg-gXR"/>
+                    <connections>
+                        <outlet property="cartTableview" destination="TqG-fs-DrQ" id="wTt-ia-buE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3u-sj-I4e" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2172" y="38"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
